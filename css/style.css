@@ -116,6 +116,7 @@ body:not(:has(.halaman:target)) nav a[href="#tentang"],
 body:has(#tentang:target)  nav a[href="#tentang"],
 body:has(#proyek:target)   nav a[href="#proyek"],
 body:has(#keahlian:target) nav a[href="#keahlian"],
+body:has(#pendidikan:target) nav a[href="#pendidikan"],
 body:has(#kontak:target)   nav a[href="#kontak"] {
   color: var(--kertas);
   border-bottom-color: var(--mint);
@@ -429,6 +430,44 @@ h3 {
   cursor: pointer;
 }
 .tombol-kecil:hover { background: var(--mint); border-color: var(--mint); }
+
+/* =========================================================
+   PENDIDIKAN: garis waktu
+   ========================================================= */
+.garis-waktu {
+  margin-left: .5rem;
+  padding-left: 2rem;
+  border-left: 3px solid var(--garis);
+}
+
+.garis-waktu li {
+  position: relative;
+  padding-bottom: 2.25rem;
+}
+.garis-waktu li:last-child { padding-bottom: 0; }
+
+.garis-waktu li::before {
+  content: "";
+  position: absolute;
+  left: calc(-2rem - 9px);
+  top: .35rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--mint);
+  border: 3px solid var(--tinta);
+}
+
+.garis-waktu .tahun {
+  color: var(--teks-redup);
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+.garis-waktu h3 { margin: .15rem 0; }
+.garis-waktu .jurusan { font-weight: 500; }
+.garis-waktu li p + p { margin-top: .35rem; }
+.garis-waktu li p { max-width: 36rem; }
 
 .catatan-form {
   margin-top: .75rem;
